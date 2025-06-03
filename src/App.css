@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.upload-input {
+  padding: 1rem 2rem;
+  border: 2px dashed #ff6b81;
+  border-radius: 8px;
+  background-color: #fff0f0;
+  color: #ff4757;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.upload-input:hover {
+  background-color: #ffecec;
+  border-color: #ff4757;
+}
+
+.heart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+
+.heart-row {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+}
+
+.heart-cell {
+  width: 40px;
+  height: 40px;
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heart-cell.filled {
+  background-color: #fff;
+  border-color: #ff8a80;
+}
+
+.heart-cell:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.heart-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.heart-cell.filled:hover .heart-image {
+  transform: scale(1.1);
+}
+
+.empty-cell {
+  width: 40px;
+  height: 40px;
+  visibility: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+  .heart-cell,
+  .empty-cell {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .heart-cell,
+  .empty-cell {
+    width: 24px;
+    height: 24px;
+  }
+
+  .upload-input {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
