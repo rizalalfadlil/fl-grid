@@ -134,7 +134,7 @@ function App() {
                       <img
                         src={images[rowIndex][colIndex] as string}
                         alt={`Heart piece ${rowIndex}-${colIndex}`}
-                        className="heart-image"
+                        className="object-cover object-center"
                       />
                     )}
                   </div>
