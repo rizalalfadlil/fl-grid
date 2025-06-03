@@ -25,7 +25,7 @@ const findContrastColor = (color: string) => {
 function App() {
 
   const [images, setImages] = useState<(string | null)[][]>(
-    HEART_GRID.map(row => row.map(cell => null))
+    HEART_GRID.map(row => row.map(_cell => null))
   );
   const heartRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLParagraphElement>(null)
@@ -147,7 +147,7 @@ function App() {
         </div>
         <div className='grid grid-cols-2 gap-2 w-full max-w-xl *:w-full'>
           <button className="bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded-md"
-            onClick={() => setImages(HEART_GRID.map(row => row.map(cell => null)))}>Kosongkan</button>
+            onClick={() => setImages(HEART_GRID.map(row => row.map(_cell => null)))}>Kosongkan</button>
           <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
             onClick={handleDownload}>Simpan</button>
         </div>
