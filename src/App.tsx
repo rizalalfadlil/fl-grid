@@ -17,11 +17,13 @@ const HEART_GRID = [
   [0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0],
 ];
 const findContrastColor = (color: string) => {
+
   const rgb = color.replace('#', '').match(/.{1,2}/g)?.map((x) => parseInt(x, 16));
   const yiq = ((rgb![0] * 299) + (rgb![1] * 587) + (rgb![2] * 114)) / 1000;
   return yiq >= 128 ? 'black' : 'white';
 }
 function App() {
+
   const [images, setImages] = useState<(string | null)[][]>(
     HEART_GRID.map(row => row.map(cell => null))
   );
